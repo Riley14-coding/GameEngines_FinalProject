@@ -1,7 +1,11 @@
 [gd_scene format=3 uid="uid://0ak4ix47cgmf"]
 
 [ext_resource type="Script" uid="uid://lawv42phiyhr" path="res://Scripts/enemyMovement.gd" id="1_m1htj"]
-[ext_resource type="Script" uid="uid://dds68qd023r2n" path="res://Scripts/EnemyState.gd" id="2_wovta"]
+[ext_resource type="Script" uid="uid://dds68qd023r2n" path="res://Scripts/EnemyState_Machine.gd" id="2_wovta"]
+[ext_resource type="Script" uid="uid://d1qep2n0hjh4w" path="res://Scripts/MovementStates/Idle_Movement_State.gd" id="3_mo1ky"]
+[ext_resource type="Script" uid="uid://dfhsue3x1272x" path="res://Scripts/MovementStates/Move_Movement_State.gd" id="4_6bs3c"]
+[ext_resource type="Script" uid="uid://ci6ojkuexuxha" path="res://Scripts/MovementStates/Chase_Movement_State.gd" id="5_uoxpr"]
+[ext_resource type="Script" uid="uid://dfr303if0saf5" path="res://Scripts/MovementStates/AttackMovementState.gd" id="6_idouy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7fd37"]
 size = Vector2(64, 64)
@@ -23,7 +27,19 @@ texture = SubResource("GradientTexture2D_wovta")
 [node name="Timer" type="Timer" parent="." unique_id=1505010744]
 autostart = true
 
-[node name="Node2D" type="Node2D" parent="." unique_id=427692691]
+[node name="MovementStateMachine" type="Node2D" parent="." unique_id=427692691]
 script = ExtResource("2_wovta")
+
+[node name="IdleMovementState" type="Node2D" parent="MovementStateMachine" unique_id=1747165717]
+script = ExtResource("3_mo1ky")
+
+[node name="MoveMovementState" type="Node2D" parent="MovementStateMachine" unique_id=1152775472]
+script = ExtResource("4_6bs3c")
+
+[node name="ChaseMovementState" type="Node2D" parent="MovementStateMachine" unique_id=2116783519]
+script = ExtResource("5_uoxpr")
+
+[node name="AttackMovementState" type="Node2D" parent="MovementStateMachine" unique_id=442546931]
+script = ExtResource("6_idouy")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
