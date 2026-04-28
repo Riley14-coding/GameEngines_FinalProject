@@ -1,18 +1,21 @@
 class_name EnemyStateMachine
 extends Node
 
-@export var current_state: State
+@export var initial_state: State
+
+var current_state: State
 var states: Dictionary = {}
 
 func _ready():
 	for child in get_children():
 		if child is State:
-			states[child.name] = child
+			states[child.name.to_lower()] = child
 			child.transitioned.connect(on_child_transitioned)
 		else:
 			push_warning("State machine contains child which is not 'State'")
-			
-	current_state.Enter()
+	if initial_state:
+		initial_state.Enter()
+		current_state = initial_state
 			
 func _process(delta):
 	current_state.Update(delta)

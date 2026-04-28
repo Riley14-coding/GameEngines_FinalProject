@@ -15,9 +15,13 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="GameEngines-FinalProject"
-run/main_scene="res://MainScene.tscn"
+run/main_scene="uid://c6hqf6rpbdnn5"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://Assets/icon.svg"
+
+[global_group]
+
+Player="Player character"
 
 [input]
 

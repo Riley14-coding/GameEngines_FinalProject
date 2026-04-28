@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://0ak4ix47cgmf"]
 
-[ext_resource type="Script" uid="uid://lawv42phiyhr" path="res://Scripts/enemyMovement.gd" id="1_m1htj"]
 [ext_resource type="Script" uid="uid://dds68qd023r2n" path="res://Scripts/EnemyState_Machine.gd" id="2_wovta"]
 [ext_resource type="Script" uid="uid://d1qep2n0hjh4w" path="res://Scripts/MovementStates/Idle_Movement_State.gd" id="3_mo1ky"]
 [ext_resource type="Script" uid="uid://dfhsue3x1272x" path="res://Scripts/MovementStates/Move_Movement_State.gd" id="4_6bs3c"]
@@ -16,7 +15,6 @@ size = Vector2(64, 64)
 gradient = SubResource("Gradient_m1htj")
 
 [node name="Enemy" type="CharacterBody2D" unique_id=1032170710]
-script = ExtResource("1_m1htj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1439662132]
 shape = SubResource("RectangleShape2D_7fd37")
@@ -27,17 +25,20 @@ texture = SubResource("GradientTexture2D_wovta")
 [node name="Timer" type="Timer" parent="." unique_id=1505010744]
 autostart = true
 
-[node name="MovementStateMachine" type="Node2D" parent="." unique_id=427692691]
+[node name="MovementStateMachine" type="Node2D" parent="." unique_id=427692691 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_wovta")
+initial_state = NodePath("IdleMovementState")
 
-[node name="IdleMovementState" type="Node2D" parent="MovementStateMachine" unique_id=1747165717]
+[node name="IdleMovementState" type="Node2D" parent="MovementStateMachine" unique_id=1747165717 node_paths=PackedStringArray("enemy")]
 script = ExtResource("3_mo1ky")
+enemy = NodePath("../..")
 
 [node name="MoveMovementState" type="Node2D" parent="MovementStateMachine" unique_id=1152775472]
 script = ExtResource("4_6bs3c")
 
-[node name="ChaseMovementState" type="Node2D" parent="MovementStateMachine" unique_id=2116783519]
+[node name="ChaseMovementState" type="Node2D" parent="MovementStateMachine" unique_id=2116783519 node_paths=PackedStringArray("enemy")]
 script = ExtResource("5_uoxpr")
+enemy = NodePath("../..")
 
 [node name="AttackMovementState" type="Node2D" parent="MovementStateMachine" unique_id=442546931]
 script = ExtResource("6_idouy")
