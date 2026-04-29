@@ -8,7 +8,7 @@ var timer : float
 var Player: CharacterBody2D
 
 func Random_Time():
-	timer = randf_range(.5,2)
+	timer = randf_range(5,10)
 
 func Enter():
 	print("Enter Idle")
@@ -17,12 +17,12 @@ func Enter():
 	
 func Update(delta: float):
 	var distance = Player.global_position - enemy.global_position
-	if distance.length()<20: 
-		transitioned.emit(self,"Chase_State")
+	if distance.length()<200: 
+		transitioned.emit("ChaseMovementState")
 	if timer<0:
 		timer -= delta
-	#else:
-		#transitioned.emit(self,"Move_State")
+	else:
+		transitioned.emit("MoveMovementState")
 
 func Exit():
 	print("Exit Idle")

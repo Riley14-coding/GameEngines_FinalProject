@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c6hqf6rpbdnn5"]
+[gd_scene format=3 uid="uid://c6hqf6rpbdnn5"]
 
 [ext_resource type="PackedScene" uid="uid://d2ljg10foq48" path="res://Scenes/player.tscn" id="1_x4av3"]
 [ext_resource type="PackedScene" uid="uid://0ak4ix47cgmf" path="res://Scenes/Enemy.tscn" id="3_rpqi1"]
@@ -21,58 +21,58 @@ size = Vector2(16.5, 646)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5crlr"]
 size = Vector2(1151, 45)
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" unique_id=1884267855]
 
-[node name="Player" parent="." instance=ExtResource("1_x4av3")]
+[node name="Player" parent="." unique_id=877196024 instance=ExtResource("1_x4av3")]
 position = Vector2(278, 252)
 
-[node name="LeftWall" type="StaticBody2D" parent="."]
+[node name="LeftWall" type="StaticBody2D" parent="." unique_id=422131958]
 material = SubResource("CanvasItemMaterial_x4av3")
 position = Vector2(25, 323)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall" unique_id=1373104316]
 shape = SubResource("RectangleShape2D_rpqi1")
 
-[node name="Sprite2D" type="Sprite2D" parent="LeftWall"]
+[node name="Sprite2D" type="Sprite2D" parent="LeftWall" unique_id=396162981]
 position = Vector2(0, 3.8147e-06)
 scale = Vector2(0.78125, 10.125)
 texture = SubResource("GradientTexture2D_rf2cd")
 
-[node name="RightWall" type="StaticBody2D" parent="."]
+[node name="RightWall" type="StaticBody2D" parent="." unique_id=253795698]
 material = SubResource("CanvasItemMaterial_x4av3")
 position = Vector2(1128, 323)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall" unique_id=246093216]
 shape = SubResource("RectangleShape2D_a814b")
 
-[node name="Sprite2D" type="Sprite2D" parent="RightWall"]
+[node name="Sprite2D" type="Sprite2D" parent="RightWall" unique_id=327053826]
 position = Vector2(5.72205e-06, -5.72205e-06)
 scale = Vector2(0.71875, 10.125)
 texture = SubResource("GradientTexture2D_rf2cd")
 
-[node name="BottomWall" type="StaticBody2D" parent="."]
+[node name="BottomWall" type="StaticBody2D" parent="." unique_id=167830939]
 material = SubResource("CanvasItemMaterial_x4av3")
 position = Vector2(576, 623)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomWall"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomWall" unique_id=959732303]
 shape = SubResource("RectangleShape2D_5crlr")
 
-[node name="Sprite2D" type="Sprite2D" parent="BottomWall"]
+[node name="Sprite2D" type="Sprite2D" parent="BottomWall" unique_id=1490668698]
 scale = Vector2(18, 0.75)
 texture = SubResource("GradientTexture2D_rf2cd")
 
-[node name="TopWall" type="StaticBody2D" parent="."]
+[node name="TopWall" type="StaticBody2D" parent="." unique_id=432872285]
 material = SubResource("CanvasItemMaterial_x4av3")
 position = Vector2(222, -251)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TopWall"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopWall" unique_id=1043817893]
 position = Vector2(350.5, 275.5)
 shape = SubResource("RectangleShape2D_5crlr")
 
-[node name="Sprite2D" type="Sprite2D" parent="TopWall"]
+[node name="Sprite2D" type="Sprite2D" parent="TopWall" unique_id=1879360067]
 position = Vector2(351, 275)
 scale = Vector2(18, 0.75)
 texture = SubResource("GradientTexture2D_rf2cd")
 
-[node name="Enemy" parent="." instance=ExtResource("3_rpqi1")]
+[node name="Enemy" parent="." unique_id=2107538180 instance=ExtResource("3_rpqi1")]
 position = Vector2(575, 335)
