@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://0ak4ix47cgmf"]
 
 [ext_resource type="Script" uid="uid://lawv42phiyhr" path="res://Scripts/enemyMovement.gd" id="1_mo1ky"]
+[ext_resource type="Texture2D" uid="uid://g8host0wmn6w" path="res://Assets/Monster3.png" id="2_6bs3c"]
 [ext_resource type="Script" uid="uid://dds68qd023r2n" path="res://Scripts/EnemyState_Machine.gd" id="2_wovta"]
 [ext_resource type="Script" uid="uid://d1qep2n0hjh4w" path="res://Scripts/MovementStates/Idle_Movement_State.gd" id="3_mo1ky"]
 [ext_resource type="Script" uid="uid://dfhsue3x1272x" path="res://Scripts/MovementStates/Move_Movement_State.gd" id="4_6bs3c"]
@@ -10,11 +11,6 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7fd37"]
 size = Vector2(64, 64)
 
-[sub_resource type="Gradient" id="Gradient_m1htj"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_wovta"]
-gradient = SubResource("Gradient_m1htj")
-
 [node name="Enemy" type="CharacterBody2D" unique_id=1032170710]
 script = ExtResource("1_mo1ky")
 
@@ -22,7 +18,9 @@ script = ExtResource("1_mo1ky")
 shape = SubResource("RectangleShape2D_7fd37")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=256740824]
-texture = SubResource("GradientTexture2D_wovta")
+position = Vector2(3.8146973e-06, 1.0000038)
+scale = Vector2(0.12355212, 0.13473685)
+texture = ExtResource("2_6bs3c")
 
 [node name="Timer" type="Timer" parent="." unique_id=1505010744]
 autostart = true

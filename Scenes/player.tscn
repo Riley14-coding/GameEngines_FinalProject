@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d2ljg10foq48"]
 
 [ext_resource type="Script" uid="uid://dgl0ubmtvok56" path="res://Scripts/PlayerController.gd" id="1_cvnsp"]
-[ext_resource type="Texture2D" uid="uid://cyhr1oaax6tc7" path="res://Assets/icon.svg" id="2_6t5aa"]
+[ext_resource type="Texture2D" uid="uid://v8rs4ky23b0i" path="res://Assets/Knight.png" id="2_cvnsp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x4av3"]
 size = Vector2(126, 123)
@@ -14,4 +14,6 @@ position = Vector2(1, 1.5)
 shape = SubResource("RectangleShape2D_x4av3")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2117778247]
-texture = ExtResource("2_6t5aa")
+position = Vector2(0.9999981, 1.5000019)
+scale = Vector2(0.75, 0.8092105)
+texture = ExtResource("2_cvnsp")
