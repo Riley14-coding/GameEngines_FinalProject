@@ -3,68 +3,39 @@
 [ext_resource type="PackedScene" uid="uid://d2ljg10foq48" path="res://Scenes/player.tscn" id="1_x4av3"]
 [ext_resource type="PackedScene" uid="uid://buj435ko1llqn" path="res://Scenes/SideWall.tscn" id="2_nhkr4"]
 [ext_resource type="PackedScene" uid="uid://0ak4ix47cgmf" path="res://Scenes/Enemy.tscn" id="3_rpqi1"]
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_x4av3"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a814b"]
-size = Vector2(16.5, 646)
-
-[sub_resource type="Gradient" id="Gradient_uxrcv"]
-offsets = PackedFloat32Array(0.577061)
-colors = PackedColorArray(1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_rf2cd"]
-gradient = SubResource("Gradient_uxrcv")
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5crlr"]
-size = Vector2(1151, 45)
+[ext_resource type="Texture2D" uid="uid://dykdskcujeug3" path="res://Assets/Floor.png" id="4_7rqgy"]
 
 [node name="Node2D" type="Node2D" unique_id=1884267855]
 
 [node name="Player" parent="." unique_id=877196024 instance=ExtResource("1_x4av3")]
 position = Vector2(278, 252)
 
-[node name="LeftWall" parent="." unique_id=1430292106 instance=ExtResource("2_nhkr4")]
-position = Vector2(25, 323)
-
-[node name="RightWall" type="StaticBody2D" parent="." unique_id=253795698]
-material = SubResource("CanvasItemMaterial_x4av3")
-position = Vector2(1128, 323)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall" unique_id=246093216]
-shape = SubResource("RectangleShape2D_a814b")
-
-[node name="Sprite2D" type="Sprite2D" parent="RightWall" unique_id=327053826]
-position = Vector2(5.72205e-06, -5.72205e-06)
-scale = Vector2(0.71875, 10.125)
-texture = SubResource("GradientTexture2D_rf2cd")
-
-[node name="BottomWall" type="StaticBody2D" parent="." unique_id=167830939]
-material = SubResource("CanvasItemMaterial_x4av3")
-position = Vector2(576, 623)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomWall" unique_id=959732303]
-shape = SubResource("RectangleShape2D_5crlr")
-
-[node name="Sprite2D" type="Sprite2D" parent="BottomWall" unique_id=1490668698]
-scale = Vector2(18, 0.75)
-texture = SubResource("GradientTexture2D_rf2cd")
-
-[node name="TopWall" type="StaticBody2D" parent="." unique_id=432872285]
-material = SubResource("CanvasItemMaterial_x4av3")
-position = Vector2(222, -251)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TopWall" unique_id=1043817893]
-position = Vector2(350.5, 275.5)
-shape = SubResource("RectangleShape2D_5crlr")
-
-[node name="Sprite2D" type="Sprite2D" parent="TopWall" unique_id=1879360067]
-position = Vector2(351, 275)
-scale = Vector2(18, 0.75)
-texture = SubResource("GradientTexture2D_rf2cd")
-
 [node name="Enemy" parent="." unique_id=2107538180 instance=ExtResource("3_rpqi1")]
 position = Vector2(575, 335)
 
 [node name="Enemy2" parent="." unique_id=1032170710 instance=ExtResource("3_rpqi1")]
 position = Vector2(933, 178)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=353605719]
+z_index = 2
+position = Vector2(577.5, 326)
+scale = Vector2(2.2731183, 1.8175895)
+texture = ExtResource("4_7rqgy")
+
+[node name="TopWall" parent="." unique_id=1489258659 instance=ExtResource("2_nhkr4")]
+position = Vector2(632, -84)
+rotation = 1.5707964
+scale = Vector2(0.384, -0.6)
+
+[node name="LeftWall" parent="." unique_id=1430292106 instance=ExtResource("2_nhkr4")]
+position = Vector2(-105, 332.00003)
+scale = Vector2(0.42615816, -0.3711981)
+
+[node name="RightWall" parent="." unique_id=1448641060 instance=ExtResource("2_nhkr4")]
+position = Vector2(1318, 334)
+scale = Vector2(0.5880003, -0.29917943)
+
+[node name="BottomWall" parent="." unique_id=1659034023 instance=ExtResource("2_nhkr4")]
+position = Vector2(628.99994, 736.99994)
+rotation = 1.5707964
+scale = Vector2(0.366, -0.6)

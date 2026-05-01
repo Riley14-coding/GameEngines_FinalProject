@@ -25,7 +25,7 @@ func Update(delta: float):
 			dirTime -= delta
 			enemy.velocity = Movedir 
 		else:
-			Movedir = Vector2(randf_range(-5,5),randf_range(-5,5))
+			Movedir = Vector2(randf_range(-50,50),randf_range(-5,5))
 			dirTime = randf_range(1,10)	
 	else:
 		transitioned.emit("IdleMovementState")

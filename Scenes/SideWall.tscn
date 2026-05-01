@@ -1,24 +1,21 @@
 [gd_scene format=3 uid="uid://buj435ko1llqn"]
 
+[ext_resource type="Texture2D" uid="uid://bptjjpocwyep0" path="res://Assets/Wall.png" id="1_huepv"]
+
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_x4av3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rpqi1"]
-size = Vector2(44.5, 646)
-
-[sub_resource type="Gradient" id="Gradient_uxrcv"]
-offsets = PackedFloat32Array(0.577061)
-colors = PackedColorArray(1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_rf2cd"]
-gradient = SubResource("Gradient_uxrcv")
+size = Vector2(716, 2979)
 
 [node name="LeftWall" type="StaticBody2D" unique_id=1430292106]
 material = SubResource("CanvasItemMaterial_x4av3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1624299887]
+position = Vector2(3, 1.5)
 shape = SubResource("RectangleShape2D_rpqi1")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1587053048]
-position = Vector2(0, 3.8147e-06)
-scale = Vector2(0.78125, 10.125)
-texture = SubResource("GradientTexture2D_rf2cd")
+position = Vector2(3, 2.000001)
+rotation = 1.5707964
+scale = Vector2(5.90125, 3.5008519)
+texture = ExtResource("1_huepv")
