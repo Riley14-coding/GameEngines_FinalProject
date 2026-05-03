@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d2ljg10foq48"]
 
-[ext_resource type="Script" uid="uid://dgl0ubmtvok56" path="res://Scripts/MVC/PlayerController.gd" id="1_cvnsp"]
+[ext_resource type="Script" uid="uid://d3i2c2amtldb2" path="res://Scripts/PlayerController.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://v8rs4ky23b0i" path="res://Assets/Knight.png" id="2_cvnsp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x4av3"]

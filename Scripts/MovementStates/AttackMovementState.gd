@@ -2,10 +2,14 @@ class_name Attack_State
 extends State
 
 func Enter():
+	var Model: PlayerModel
+	var Player = $"../../../Player"
 	print("Attack")
-	get_tree().paused = true
-	print("Game Over")
-	
-func Update(delta: float) -> void:
+	Player.TakeDamage()
+	await get_tree().create_timer(1.0).timeout
 	transitioned.emit("IdleMovementState")
+	#get_tree().paused = true
+	#print("Game Over")
+	
+	
 	

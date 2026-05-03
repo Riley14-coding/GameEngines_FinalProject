@@ -1,3 +1,13 @@
-extends CharacterBody2D
+extends Node
 
-var PlayerModel: PlayerModel
+@export var Model:PlayerModel
+@onready var HealthLabel: Label = $UI/Health
+
+func _ready():
+	print("Connected")
+	Model.HealthChange.connect(Showhealth)
+
+func Showhealth():
+	print("Working?")
+	HealthLabel.text = "Hello Health"
+	#"Health %s" % Model.health
