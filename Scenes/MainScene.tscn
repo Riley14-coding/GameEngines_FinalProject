@@ -7,13 +7,12 @@
 [ext_resource type="Script" uid="uid://cookp5mcyav0o" path="res://Scripts/MVC/PlayerModel.gd" id="3_y4jh7"]
 [ext_resource type="Texture2D" uid="uid://dykdskcujeug3" path="res://Assets/Floor.png" id="4_7rqgy"]
 
-[node name="Node2D" type="Node2D" unique_id=1884267855 node_paths=PackedStringArray("Model")]
+[node name="Level" type="Node2D" unique_id=1884267855 node_paths=PackedStringArray("Player")]
 script = ExtResource("1_qxria")
-Model = NodePath("Player/PlayerModel")
+Player = NodePath("Player")
 
-[node name="Player" parent="." unique_id=877196024 node_paths=PackedStringArray("Model") instance=ExtResource("1_x4av3")]
+[node name="Player" parent="." unique_id=877196024 instance=ExtResource("1_x4av3")]
 position = Vector2(278, 252)
-Model = NodePath("PlayerModel")
 
 [node name="PlayerModel" type="Node2D" parent="Player" unique_id=952841059]
 script = ExtResource("3_y4jh7")

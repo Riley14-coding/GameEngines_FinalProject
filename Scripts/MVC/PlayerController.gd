@@ -1,7 +1,12 @@
 extends CharacterBody2D
 
 @export var speed = 400
+signal HealthChange()
+var Model:PlayerModel
 
+func _ready():
+	Model=PlayerModel.new()
+	
 func get_input():
 	look_at(get_global_mouse_position())
 	var input_direction = Input.get_vector("left", "right", "up", "down")
@@ -11,4 +16,15 @@ func _physics_process(delta):
 	get_input()
 	move_and_slide()
 	
+func TakeDamage():
+	print("Take Damage")
+	var newHealth
+	newHealth=Model.health - 1
+	GetHealth(newHealth)
 	
+func GetHealth(value):
+	print("HealthSet")
+	if(Model.health != value):
+		print("NotEqual")
+		Model.health = value
+		HealthChange.emit()
