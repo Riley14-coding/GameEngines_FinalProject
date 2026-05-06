@@ -19,6 +19,10 @@ run/main_scene="uid://c6hqf6rpbdnn5"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://Assets/icon.svg"
 
+[autoload]
+
+Model="*uid://cookp5mcyav0o"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/gut/plugin.cfg")
