@@ -10,7 +10,7 @@ func _ready():
 
 func Showhealth():
 	if(Model.health>0):
-		HealthLabel.text = "Health %s" % Model.health
+		HealthLabel.text = "Health:  %s" % Model.health
 	else:
 		HealthLabel.text = "Game Over"
 		get_tree().paused = true
